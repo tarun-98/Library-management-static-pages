@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+	<head>
+		<script>
+		function res()
+		{
+		document.f.inp1.value="";
+		document.f.inp2.value="";
+		document.f.inp3.value="";
+		document.f.inp4.value="";
+		document.f.inp5.value="";
+	}
+		</script>
+		<meta charset="utf-8">
+		<title>Homepage</title>
+		<link rel="stylesheet" href="login.css">
+		<link rel="stylesheet" href="reg.css">
+		<style>
+		input{
+			padding-left: 10px;
+
+		}
+		body{
+			background-image: url('shelf1.jpg');
+		}
+
+		.cda{
+			cursor:pointer;
+			width: 80px;
+	    height: 80px;
+	    border-radius: 50%;
+	    overflow: hidden;
+	    position: absolute;
+	    top: calc(-90px/2);
+	    left: calc(50% - 45px);
+		}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="logo">
+				<img src="logo1.png">
+				<h2>KL University</h2>
+			</div>
+			<div class="navleft">
+				<ul>
+					<li><a href="search.php">Search</a></li>
+					<li><a class="active" href="insert.html">Insert</a></li>
+					<li><a href="edit.html">Edit</a></li>
+					<li><a href="delete.html">Delete</a></li>
+					<li><a href="report.html">Report</a></li>
+				</ul>
+			</div>
+			<div class="navright">
+				<a href="homepage.html"><button>Log Out</button></a>
+			</div>
+		</div>
+		<div class="loginBox">
+			<img class="cda" height="180px" width="100px" src="book.png" class="user" onclick="res()">
+			<h2>Enter Book Record</h2>
+			<form name="f" action="insert.php" method="POST" >
+				<table style="float: left;">
+					<tr>
+						<td>
+							<p style="color:black">Book ID:</p></td>
+							<td>
+							<input id="inp1" type="text" style="border-color: black;" name="t1" placeholder="Enter bookID" required></td>
+					</tr>
+					<tr>
+						<td>
+							<p style="color:black">Book name:</p></td>
+							<td>
+							<input type="text"  id="inp2" style="border-color: black;" name="t2" placeholder="Enter name" required>
+						</td>
+					</tr>
+					<tr>
+						<td >
+							<p style="color:black">Author:</p></td>
+							<td>
+							<input type="text"  id="inp3" style="border-color: black;" name="t3" placeholder="Enter author" required>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<p style="color:black">Genre:</p></td>
+								<td>
+							<input type="text"  id="inp4" style="border-color: black;" name="t4" placeholder="Enter genre" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p style="color:black">Price:</p></td>
+							<td>
+							<input type="text" id="inp5" style="border-color: black;"  name="t5" placeholder="price" required>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<input  type="submit" name="" value="Done">
+						</td>
+
+					</tr>
+				</table>
+
+			</form>
+		</div>
+	</body>
+</html>

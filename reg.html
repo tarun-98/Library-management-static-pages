@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sign Up Form</title>
+		<link rel="stylesheet" href="reg.css">
+		<script type="text/javascript">
+		function validate(){
+		if(!(document.f.t1.value.length>8)){
+			window.alert("username should be more than 8 charecters");
+			document.f.t1.focus();
+			return false;
+		}
+		if(!(document.f.t2.value.match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/))){
+			window.alert("Password should consist of atleast one alphabet or a number and one Special Charecter");
+			document.f.t2.focus();
+			return false;
+		}
+		if((document.f.t2.value)!=(document.f.t3.value)){
+			window.alert("Passwords didn't match..!");
+			document.f.t2.value=null;
+			document.f.t3.value=null;
+			document.f.t2.focus();
+			return false;
+		}
+	}
+	</script>
+	</head>
+
+	<body>
+		<div class="nav">
+			<div class="logo">
+				<img src="logo1.png">
+				<h2>KL University</h2>
+			</div>
+			<div class="navleft">
+				<ul>
+					<li><a href="homepage.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="updates.html">Updates</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="navright">
+				<a href="login.html"><button>Log In</button></a>
+			</div>
+		</div>
+		<div class="loginBox">
+			<img src="user.png" class="user">
+			<h2>Sign Up Here</h2>
+			<form name="f" action="reg1.php" method="POST" onsubmit="return validate()">
+				<table style="float: left;">
+					<tr>
+						<td>
+							<p style="color:black">Name</p>
+							<input type="text" style="border-color: black;" name="fname" placeholder="Enter First Name" required></td>
+					</tr>
+					<tr>
+						<td>
+							<p style="color:black">User ID</p>
+							<input type="text"  style="border-color: black;" name="lname" placeholder="Enter ID" required>
+						</td>
+					</tr>
+					<tr>
+						<td >
+							<p style="color:black">Email Id</p>
+							<input type="email"  style="border-color: black;" name="emailid" placeholder="Enter your Email Id" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" name="s" value="Sign Up">
+						</td>
+					</tr>
+				</table>
+					<table style="float: right;">
+					<tr>
+						<td>
+							<p style="color:black">Username</p>
+							<input type="text"  style="border-color: black;" name="t1" placeholder="Enter username" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p style="color:black">Password</p>
+							<input type="Password" style="border-color: black;"  name="t2" placeholder="••••••" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p style="color:black">Confirm Password</p>
+							<input type="Password" style="border-color: black;"  name="t3" placeholder="••••••" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="reset" name="" value="Reset">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
